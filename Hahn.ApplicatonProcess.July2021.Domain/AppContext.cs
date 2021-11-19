@@ -8,9 +8,10 @@ namespace Hahn.ApplicatonProcess.July2021.Domain
         public AppContext(DbContextOptions<AppContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
         public DbSet<User> Users { get; set; }
-        public DbSet<Asset> Posts { get; set; }
+        public DbSet<Asset> Assets { get; set; }
         
     }
 }
