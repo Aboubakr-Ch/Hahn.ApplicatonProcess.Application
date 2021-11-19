@@ -1,10 +1,11 @@
+using Hahn.ApplicatonProcess.July2021.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-
 
 namespace Hahn.ApplicatonProcess.July2021.Web
 {
@@ -22,7 +23,7 @@ namespace Hahn.ApplicatonProcess.July2021.Web
         {
 
             services.AddControllers();
-            // services.AddDbContext<AppContext>(opt =>opt.UseInMemoryDatabase("test"));
+            services.AddDbContext<AppContext>(opt =>opt.UseInMemoryDatabase("test"));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hahn.ApplicatonProcess.July2021.Web", Version = "v1" });

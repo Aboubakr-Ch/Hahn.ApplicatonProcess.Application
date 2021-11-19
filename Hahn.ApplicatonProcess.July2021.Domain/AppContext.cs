@@ -11,5 +11,6 @@ namespace Hahn.ApplicatonProcess.July2021.Domain
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Asset> Posts { get; set; }
+        
     }
 }
