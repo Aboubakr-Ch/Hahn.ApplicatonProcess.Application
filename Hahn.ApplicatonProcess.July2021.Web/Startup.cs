@@ -1,7 +1,9 @@
+using FluentValidation.AspNetCore;
 using Hahn.ApplicatonProcess.July2021.Data.BusinessLogic;
 using Hahn.ApplicatonProcess.July2021.Data.Interfaces;
 using Hahn.ApplicatonProcess.July2021.Data.UnitOfWork;
 using Hahn.ApplicatonProcess.July2021.Domain;
+using Hahn.ApplicatonProcess.July2021.Domain.Validators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +30,8 @@ namespace Hahn.ApplicatonProcess.July2021.Web
             services.AddControllers();
             services.AddDbContext<AppContext>(opt =>opt.UseInMemoryDatabase(databaseName: "Test"));
             services.AddScoped<IUnitOfWork,UnitOfWork>();
+            services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<UserValidator>());
+            services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AssetValidator>());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hahn.ApplicatonProcess.July2021.Web", Version = "v1" });

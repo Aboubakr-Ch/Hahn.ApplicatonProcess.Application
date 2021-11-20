@@ -29,6 +29,12 @@ namespace Hahn.ApplicatonProcess.July2021.Data.BusinessLogic
             _context.Assets.Remove(book);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<ICollection<Asset>> GetAll(User user)
+        {
+            return await _context.Assets.ToListAsync();
+        }
+
         public async Task<Asset> GetById(string id)
         {
             return await _context.Assets.FindAsync(id);
