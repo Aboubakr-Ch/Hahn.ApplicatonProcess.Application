@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System.IO;
+using System.Reflection;
 
 namespace Hahn.ApplicatonProcess.July2021.Web
 {
@@ -34,7 +36,11 @@ namespace Hahn.ApplicatonProcess.July2021.Web
             services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AssetValidator>());
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hahn.ApplicatonProcess.July2021.Web", Version = "v1" });
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo { Title = "Hahn.ApplicatonProcess.July2021.WebAPI", Version = "v1" ,Description="Web API for Creating Users with Assets To Trace"});
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(System.AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 
@@ -45,7 +51,7 @@ namespace Hahn.ApplicatonProcess.July2021.Web
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Hahn.ApplicatonProcess.July2021.Web v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Hahn.ApplicatonProcess.July2021.WebAPI v1"));
             }
 
             app.UseHttpsRedirection();
