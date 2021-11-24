@@ -28,7 +28,7 @@ namespace Hahn.ApplicatonProcess.July2021.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors();
             services.AddControllers();
             services.AddDbContext<AppContext>(opt =>opt.UseInMemoryDatabase(databaseName: "Test"));
             services.AddScoped<IUnitOfWork,UnitOfWork>();
@@ -53,7 +53,8 @@ namespace Hahn.ApplicatonProcess.July2021.Web
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Hahn.ApplicatonProcess.July2021.WebAPI v1"));
             }
-
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod()
+.AllowAnyHeader());
             app.UseHttpsRedirection();
 
             app.UseRouting();

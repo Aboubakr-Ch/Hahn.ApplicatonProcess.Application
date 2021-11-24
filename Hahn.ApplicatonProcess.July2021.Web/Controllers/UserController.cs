@@ -37,7 +37,6 @@ namespace Hahn.ApplicatonProcess.July2021.Web.Controllers
         public async Task<ActionResult<User>> PostAsset([FromBody] User user)
         {
             _logger.LogInformation("calliing Post Book method...");
-
             var newUser = await _unitOfWork.Users.Create(user);
             return CreatedAtAction(nameof(GetUser), new { id = newUser.Id }, newUser);
         }
