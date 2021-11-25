@@ -25,7 +25,7 @@ namespace Hahn.ApplicatonProcess.July2021.Web.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
-            _logger.LogInformation("calliing Get method...");
+            _logger.LogInformation("calling the Get User method");
             return await _unitOfWork.Users.GetById(id);
         }
         /// <summary>
@@ -34,9 +34,9 @@ namespace Hahn.ApplicatonProcess.July2021.Web.Controllers
         /// <param name="user"></param>
         /// <returns>return the created user</returns>
         [HttpPost]
-        public async Task<ActionResult<User>> PostAsset([FromBody] User user)
+        public async Task<ActionResult<User>> PostUser([FromBody] User user)
         {
-            _logger.LogInformation("calliing Post Book method...");
+            _logger.LogInformation("calling the Create User method");
             var newUser = await _unitOfWork.Users.Create(user);
             return CreatedAtAction(nameof(GetUser), new { id = newUser.Id }, newUser);
         }
@@ -47,8 +47,9 @@ namespace Hahn.ApplicatonProcess.July2021.Web.Controllers
         /// <param name="user"></param>
         /// <returns>return the updated User</returns>
         [HttpPut]
-        public async Task<ActionResult> PutBooks(int id, [FromBody] User user)
+        public async Task<ActionResult> PutUser(int id, [FromBody] User user)
         {
+            _logger.LogInformation("calling the Update User method");
             if (id != user.Id)
             {
                 return BadRequest();
@@ -62,8 +63,9 @@ namespace Hahn.ApplicatonProcess.July2021.Web.Controllers
         /// <param name="id"></param>
         /// <returns>return if deletion is successful</returns>
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id)
+        public async Task<ActionResult> DeleteUser(int id)
         {
+            _logger.LogInformation("calling the Delete User method");
             var user = await _unitOfWork.Users.GetById(id);
             if (user == null)
             {

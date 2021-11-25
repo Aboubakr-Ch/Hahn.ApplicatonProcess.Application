@@ -31,7 +31,7 @@ namespace Hahn.ApplicatonProcess.July2021.Web.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Asset>> GetAsset(string id)
         {
-            _logger.LogInformation("calliing Get method...");
+            _logger.LogInformation("calling the Get Asset method");
              return await _unitOfWork.Assets.GetById(id);
         }
         /// <summary>
@@ -42,8 +42,7 @@ namespace Hahn.ApplicatonProcess.July2021.Web.Controllers
         [HttpPost]
         public async Task<ActionResult<Asset>> PostAsset([FromBody]Asset asset)
         {
-            _logger.LogInformation("calliing Post Book method...");
-
+            _logger.LogInformation("calling the Create Asset method");
             var newAsset = await _unitOfWork.Assets.Create(asset);
             return CreatedAtAction(nameof(GetAsset), new { id = newAsset.Id }, newAsset);
         }
@@ -54,8 +53,9 @@ namespace Hahn.ApplicatonProcess.July2021.Web.Controllers
         /// <param name="asset"></param>
         /// <returns>return the updated asset</returns>
         [HttpPut]
-        public async Task<ActionResult> PutBooks(string id, [FromBody] Asset asset)
+        public async Task<ActionResult> PutAsset(string id, [FromBody] Asset asset)
         {
+            _logger.LogInformation("calling the Update Asset method");
             if (id != asset.Id)
             {
                 return BadRequest();
@@ -69,8 +69,9 @@ namespace Hahn.ApplicatonProcess.July2021.Web.Controllers
         /// <param name="id"></param>
         /// <returns>return if deletion is successful</returns>
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(string id)
+        public async Task<ActionResult> DeleteAsset(string id)
         {
+            _logger.LogInformation("calling the Delete Asset method");
             var book = await _unitOfWork.Assets.GetById(id);
             if (book == null)
             {
