@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f40691c6-22c5-4893-813d-2adb31df8d22": {
+      "ProjectGuid": "f40691c6-22c5-4893-813d-2adb31df8d22",
+      "DisplayName": "Hahn.ApplicatonProcess.July2021.Web",
+      "ColorIndex": 0
+    },
+    "515cebb8-329e-4cae-bf5b-c446f289c1a8": {
+      "ProjectGuid": "515cebb8-329e-4cae-bf5b-c446f289c1a8",
+      "DisplayName": "Hahn.ApplicatonProcess.July2021.Domain",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "865f5e3a-35e6-4f18-94c4-be742ce6ed7c": {
+      "ProjectGuid": "865f5e3a-35e6-4f18-94c4-be742ce6ed7c",
+      "DisplayName": "Hahn.ApplicatonProcess.July2021.Data",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

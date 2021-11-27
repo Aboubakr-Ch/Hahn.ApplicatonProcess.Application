@@ -1,0 +1,115 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "Hahn.ApplicatonProcess.July2021.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Hahn.ApplicatonProcess.July2021.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Hahn.ApplicatonProcess.July2021.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hahn.ApplicatonProcess.July2021.Data.dll": {}
+        }
+      },
+      "Hahn.ApplicatonProcess.July2021.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Hahn.ApplicatonProcess.July2021.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hahn.ApplicatonProcess.July2021.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Hahn.ApplicatonProcess.July2021.Data/1.0.0": {
+      "type": "project",
+      "path": "../Hahn.ApplicatonProcess.July2021.Data/Hahn.ApplicatonProcess.July2021.Data.csproj",
+      "msbuildProject": "../Hahn.ApplicatonProcess.July2021.Data/Hahn.ApplicatonProcess.July2021.Data.csproj"
+    },
+    "Hahn.ApplicatonProcess.July2021.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Hahn.ApplicatonProcess.July2021.Domain/Hahn.ApplicatonProcess.July2021.Domain.csproj",
+      "msbuildProject": "../Hahn.ApplicatonProcess.July2021.Domain/Hahn.ApplicatonProcess.July2021.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "Hahn.ApplicatonProcess.July2021.Data >= 1.0.0",
+      "Hahn.ApplicatonProcess.July2021.Domain >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\bbkr\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "F:\\Amine\\Hahn.ApplicatonProcess.Application\\Hahn.ApplicatonProcess.July2021.Web\\Hahn.ApplicatonProcess.July2021.Web.csproj",
+      "projectName": "Hahn.ApplicatonProcess.July2021.Web",
+      "projectPath": "F:\\Amine\\Hahn.ApplicatonProcess.Application\\Hahn.ApplicatonProcess.July2021.Web\\Hahn.ApplicatonProcess.July2021.Web.csproj",
+      "packagesPath": "C:\\Users\\bbkr\\.nuget\\packages\\",
+      "outputPath": "F:\\Amine\\Hahn.ApplicatonProcess.Application\\Hahn.ApplicatonProcess.July2021.Web\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\bbkr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "F:\\Amine\\Hahn.ApplicatonProcess.Application\\Hahn.ApplicatonProcess.July2021.Data\\Hahn.ApplicatonProcess.July2021.Data.csproj": {
+              "projectPath": "F:\\Amine\\Hahn.ApplicatonProcess.Application\\Hahn.ApplicatonProcess.July2021.Data\\Hahn.ApplicatonProcess.July2021.Data.csproj"
+            },
+            "F:\\Amine\\Hahn.ApplicatonProcess.Application\\Hahn.ApplicatonProcess.July2021.Domain\\Hahn.ApplicatonProcess.July2021.Domain.csproj": {
+              "projectPath": "F:\\Amine\\Hahn.ApplicatonProcess.Application\\Hahn.ApplicatonProcess.July2021.Domain\\Hahn.ApplicatonProcess.July2021.Domain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

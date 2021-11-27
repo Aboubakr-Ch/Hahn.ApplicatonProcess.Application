@@ -6,6 +6,7 @@ using Hahn.ApplicatonProcess.July2021.Domain;
 using Hahn.ApplicatonProcess.July2021.Domain.Validators;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +29,7 @@ namespace Hahn.ApplicatonProcess.July2021.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
             services.AddCors();
             services.AddControllers();
             services.AddDbContext<AppContext>(opt =>opt.UseInMemoryDatabase(databaseName: "Test"));
