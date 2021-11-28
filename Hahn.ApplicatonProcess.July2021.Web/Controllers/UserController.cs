@@ -33,7 +33,7 @@ namespace Hahn.ApplicatonProcess.July2021.Web.Controllers
         /// </summary>
         /// <param name="user"></param>
         /// <returns>return the created user</returns>
-        [HttpPost]
+        [HttpPut("{id}")]
         public async Task<ActionResult<User>> PostUser([FromBody] User user)
         {
             _logger.LogInformation("calling the Create User method");
